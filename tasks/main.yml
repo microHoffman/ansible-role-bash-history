@@ -6,7 +6,9 @@
 
 - name: Ensure bash config file exists
   ansible.builtin.fail:
-    msg: "Bash config file {{ bash_history_bash_config_file }} does not exist. Please ensure the passed path via bash_history_bash_config_file variable is correct."
+    msg: >-
+      Bash config file {{ bash_history_bash_config_file }} does not exist.
+      Please ensure the passed path via bash_history_bash_config_file variable is correct.
   when: not bash_config_file.stat.exists
 
 - name: Add custom configurations to .bashrc
