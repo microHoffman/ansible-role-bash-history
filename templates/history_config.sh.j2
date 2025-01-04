@@ -1,0 +1,19 @@
+# Undocumented feature which sets the size to "unlimited".
+# http://stackoverflow.com/questions/9457233/unlimited-bash-history
+export HISTSIZE="{{ "" if bash_history_histsize == "unlimited" else bash_history_histsize }}"
+export HISTFILESIZE="{{ "" if bash_history_histfilesize == "unlimited" else bash_history_histfilesize }}"
+
+export HISTTIMEFORMAT="{{ bash_history_histtimeformat }}"
+
+# Change the file location because certain bash sessions truncate .bash_history file upon close.
+# http://superuser.com/questions/575479/bash-history-truncated-to-500-lines-on-each-login
+export HISTFILE="{{ bash_history_histfile }}"
+
+export HISTCONTROL="{{ bash_history_histcontrol }}"
+export HISTIGNORE="{{ bash_history_histignore }}"
+
+{% if bash_history_write_after_each_command %}
+# Force prompt to write history after every command.
+# http://superuser.com/questions/20900/bash-history-loss
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+{% endif %}

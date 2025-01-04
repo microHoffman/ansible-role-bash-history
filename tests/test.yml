@@ -1,8 +1,8 @@
 ---
-- name: Include the template.template role
+- name: Include the microhoffman.bash_history role
   hosts: all
   any_errors_fatal: true
   tasks:
     - name: Include role
       ansible.builtin.include_role:
-        name: template.template
+        name: microhoffman.bash_history

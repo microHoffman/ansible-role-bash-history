@@ -1,2 +1,11 @@
 ---
-template_text: This is some template text.
+bash_history_histsize: unlimited
+bash_history_histfilesize: unlimited
+bash_history_histtimeformat: "[%F %T] "
+bash_history_histfile: "~/.bash_eternal_history"
+# if empty, sets the value to empty string which does not filter out any commands
+bash_history_histcontrol: ""
+# if empty, sets the value to empty string which does not filter out any commands
+bash_history_histignore: ""
+bash_history_bash_config_file: "~/.bashrc"
+bash_history_write_after_each_command: true
